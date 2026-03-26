@@ -1,4 +1,3 @@
-/* Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -6,129 +5,122 @@
 }
 
 body {
-    font-family: 'Inter', sans-serif;
-    line-height: 1.6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fdfdfd;
     color: #333;
-    background-color: #f9f9f9;
-    scroll-behavior: smooth;
 }
 
-/* Header */
+/* Header / Nav */
 header {
-    background: #1a1a1a;
-    color: #fff;
-    padding: 1rem 0;
-    position: fixed;
-    width: 100%;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+    position: sticky;
     top: 0;
-    z-index: 1000;
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 20px;
+    z-index: 100;
 }
 
 nav ul {
     display: flex;
+    justify-content: center;
     list-style: none;
 }
 
 nav ul li a {
-    color: #fff;
     text-decoration: none;
-    margin-left: 20px;
-    font-size: 0.9rem;
+    color: #555;
+    font-weight: bold;
+    margin: 0 30px;
+    text-transform: uppercase;
 }
 
-/* Hero Section */
-.hero {
-    padding: 150px 20px 80px;
-    background: #ffffff;
+/* Main Layout: Sidebar + Main */
+.main-layout {
+    display: flex;
+    min-height: calc(100vh - 120px);
+}
+
+/* Sidebar Styling from your sketch */
+.sidebar {
+    width: 150px;
+    background: #f4f4f4;
+    padding: 40px 10px;
+    border-right: 1px solid #ddd;
+}
+
+.hobby-link {
+    background: #fff;
+    padding: 15px 10px;
+    margin-bottom: 20px;
     text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: 0.3s;
 }
 
-.profile-frame {
-    width: 200px;
-    height: 200px;
-    margin: 0 auto 20px;
-    border: 4px solid #333;
-    border-radius: 50%;
+.hobby-link:hover {
+    background: #333;
+    color: #fff;
+}
+
+/* Main Content Styling */
+main {
+    flex: 1;
+    padding: 40px;
+}
+
+.welcome-section {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.profile-box {
+    width: 100%;
+    max-width: 500px;
+    height: 300px;
+    background: #eee;
+    margin-bottom: 20px;
+    border: 2px solid #333;
+    border-radius: 15px;
     overflow: hidden;
 }
 
-.profile-img {
+.profile-pic {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-/* Hobbies */
-#hobbies {
-    padding: 80px 20px;
-    max-width: 1000px;
-    margin: 0 auto;
+.greeting {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #222;
 }
 
-.hobby-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.hobby-card {
+.bio {
+    font-size: 1.1rem;
+    line-height: 1.8;
     background: #fff;
     padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    text-align: center;
+    border-left: 5px solid #333;
 }
 
-.hobby-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 15px;
-}
-
-/* Java Code Section */
-#java {
-    background: #f0f0f0;
-    padding: 80px 20px;
-    text-align: center;
-}
-
-.code-window {
-    background: #2d2d2d;
-    color: #ccc;
-    text-align: left;
-    max-width: 500px;
-    margin: 30px auto;
-    border-radius: 8px;
-    overflow: hidden;
-    font-family: 'Courier New', monospace;
-}
-
-.code-header {
-    background: #3d3d3d;
-    padding: 10px 20px;
-    font-size: 0.8rem;
-}
-
-pre {
-    padding: 20px;
+.java-code {
+    margin-top: 30px;
+    background: #222;
+    color: #00ff00;
+    padding: 15px;
+    border-radius: 5px;
+    font-family: monospace;
 }
 
 /* Footer */
 footer {
-    background: #1a1a1a;
-    color: #888;
+    background: #333;
+    color: #fff;
     text-align: center;
-    padding: 40px 0;
+    padding: 20px 0;
 }
