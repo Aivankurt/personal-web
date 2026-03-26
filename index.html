@@ -1,1 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio | ICT Student</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+    <header>
+        <nav>
+            <div class="logo">DevPortfolio</div>
+            <ul>
+                <li><a href="#about">Home</a></li>
+                <li><a href="#hobbies">Hobbies</a></li>
+                <li><a href="#java">Java Work</a></li>
+                <li><a href="#" onclick="showContact()">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about" class="hero">
+        <div class="container">
+            <div class="profile-frame">
+                <img src="me.jpg" alt="Welcome Picture" class="profile-img">
+            </div>
+            <h1>Hi, I'm [Your Name]</h1>
+            <p>Grade 11 ICT Student | Aspiring Entrepreneur | Content Creator</p>
+        </div>
+    </section>
+
+    <section id="hobbies">
+        <h2>My Hobbies & Sports</h2>
+        <div class="hobby-grid">
+            <div class="hobby-card">
+                <img src="https://images.unsplash.com/photo-1626225967045-961ccf9a6352?auto=format&fit=crop&w=300&q=80" alt="Badminton">
+                <h3>Badminton</h3>
+                <p>Developing agility and focus on the court.</p>
+            </div>
+            <div class="hobby-card">
+                <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=300&q=80" alt="Arnis">
+                <h3>Arnis</h3>
+                <p>Practicing the traditional martial arts of the Philippines.</p>
+            </div>
+            <div class="hobby-card">
+                <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=300&q=80" alt="Piano">
+                <h3>Music</h3>
+                <p>Practicing melodies on my Casio keyboard.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="java">
+        <h2>Java Programming</h2>
+        <p>A quick look at my backend logic and problem-solving skills.</p>
+        <div class="code-window">
+            <div class="code-header"><span>Main.java</span></div>
+            <pre>
+public class MyProfile {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+        System.out.println("Status: Grade 11 ICT Strand");
+    }
+}</pre>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 [Your Name]. Built with Vanilla HTML/CSS.</p>
+    </footer>
+
+    <script>
+        function showContact() {
+            alert("You can reach me through my GitHub repository or Facebook!");
+        }
+
+        // Smooth Scroll effect
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
