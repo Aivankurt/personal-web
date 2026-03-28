@@ -2,40 +2,53 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Philippine Artistry Art Gallery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Cinzel:wght@700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>Home</title>
 </head>
 <body>
-    <nav class="nav">
-        <ul class="nav-list">
-            <li><a href="index.html" class="nav-link">Home</a></li>
-            <li><a href="page2.html" class="nav-link">Tutorials</a></li>
-            <li><a href="page3.html" class="nav-link">History</a></li>
-        </ul>
-    </nav>
-    <aside class="side-menu">
-        <a href="index.html" class="side-link">Home</a>
-        <a href="page2.html" class="side-link">Tutorials</a>
-        <a href="page3.html" class="side-link">History</a>
-    </aside>
-    <main>
-        <div class="content-card">
-            <h1>Welcome to Philippine Artistry</h1>
-            <p>Please log in to explore the history section.</p>
-            <form id="loginForm" style="margin-top:20px;">
-                <input type="text" id="user" placeholder="Username" required style="display:block; margin-bottom:10px; padding:8px;">
-                <input type="password" id="pass" placeholder="Password" required style="display:block; margin-bottom:10px; padding:8px;">
-                <button type="submit" style="padding:10px 20px; background:#5d4037; color:white; border:none; cursor:pointer;">Log In</button>
+<nav class="nav">
+    <ul class="nav-list">
+        <li><a href="index.html" class="nav-link active">Home</a></li>
+        <li><a href="page2.html" class="nav-link">Tutorials</a></li>
+        <li><a href="page3.html" class="nav-link">Arts & History</a></li>
+    </ul>
+</nav>
+<aside class="side-menu">
+    <a href="index.html" class="side-link">Home</a>
+    <a href="page2.html" class="side-link">Tutorials</a>
+    <a href="page3.html" class="side-link">History</a>
+</aside>
+<main>
+    <section class="home-hero">
+        <h1 class="home-title">Welcome!</h1>
+        <h2 class="home-subtitle">Philippine Artistry Art Gallery</h2>
+        <div class="login-card">
+            <h3 style="margin-bottom: 20px;">Log-in</h3>
+            <form id="loginForm">
+                <input type="text" id="user" class="form-input" placeholder="Username" required>
+                <input type="password" id="pass" class="form-input" placeholder="Password" required>
+                <button type="submit" class="btn-submit">Log In</button>
             </form>
         </div>
-    </main>
-    <script>
-        document.getElementById('loginForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            if (document.getElementById('user').value === 'admin' && document.getElementById('pass').value === 'password') {
-                window.location.href = 'page3.html';
-            } else { alert('Incorrect credentials (admin/password).'); }
-        });
-    </script>
+    </section>
+</main>
+<footer class="footer">
+    <p><i>"Art isn't all about the details but on how you show your imagination"</i></p>
+    <p style="font-size: 0.8rem; margin-top: 5px;">contact@philippineartistry.com | 09989980979</p>
+</footer>
+<script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const username = document.getElementById('user').value;
+        const password = document.getElementById('pass').value;
+        if (username === 'admin' && password === 'password') {
+            window.location.href = 'page3.html'; 
+        } else {
+            alert('Incorrect credentials. Try admin/password.');
+        }
+    });
+</script>
 </body>
 </html>
