@@ -1,160 +1,59 @@
-:root {
-    --primary-color: #5d4037;
-    --secondary-color: #efebe9;
-    --accent-color: #ffcc80;
-    --highlight-color: #bf360c;
-    --text-color: #3e2723;
-    --bg-overlay: rgba(244, 236, 207, 0.85);
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Philippine Artistry Art Gallery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Cinzel:wght@700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+<nav class="nav">
+    <ul class="nav-list">
+        <li><a href="index.html" class="nav-link active">Home</a></li>
+        <li><a href="tutorials.html" class="nav-link">Tutorials</a></li>
+        <li><a href="history.html" class="nav-link">Arts & History</a></li>
+    </ul>
+</nav>
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: var(--text-color);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    background: linear-gradient(var(--bg-overlay), var(--bg-overlay)),
-        url('https://cdn.luxatic.com/wp-content/uploads/2019/02/Vincent-van-Gogh.jpg') no-repeat center center fixed;
-    background-size: cover;
-}
+<aside class="side-menu">
+    <a href="index.html" class="side-link">Home</a>
+    <a href="tutorials.html" class="side-link">Tutorials</a>
+    <a href="history.html" class="side-link">History</a>
+</aside>
 
-.nav {
-    background-color: var(--primary-color);
-    padding: 15px 0;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
+<main>
+    <section class="home-hero">
+        <h1 class="home-title">Welcome!</h1>
+        <h2 class="home-subtitle">Philippine Artistry Art Gallery</h2>
+        <div class="login-card">
+            <h3 style="margin-bottom: 20px;">Log-in</h3>
+            <form id="loginForm">
+                <input type="text" id="user" class="form-input" placeholder="Username" required>
+                <input type="password" id="pass" class="form-input" placeholder="Password" required>
+                <button type="submit" class="btn-submit">Log In</button>
+            </form>
+        </div>
+    </section>
+</main>
 
-.nav-list {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-}
+<footer class="footer">
+    <p><i>"Art isn't all about the details but on how you show your imagination"</i></p>
+    <p style="font-size: 0.8rem; margin-top: 5px;">contact@philippineartistry.com | 09989980979</p>
+</footer>
 
-.nav-link {
-    text-decoration: none;
-    color: var(--secondary-color);
-    font-weight: bold;
-    font-size: 1.1rem;
-    transition: color 0.3s ease;
-}
-
-.nav-link:hover,
-.nav-link.active {
-    color: var(--accent-color);
-}
-
-.side-menu {
-    position: fixed;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(93, 64, 55, 0.9);
-    padding: 20px 10px;
-    border-radius: 0 10px 10px 0;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
-    z-index: 999;
-}
-
-.side-link {
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
-    transform: rotate(180deg);
-    color: var(--secondary-color);
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: bold;
-    padding: 10px 5px;
-    transition: all 0.3s ease;
-    border-left: 3px solid transparent;
-}
-
-.side-link:hover {
-    color: var(--accent-color);
-    border-left: 3px solid var(--accent-color);
-}
-
-main {
-    flex: 1;
-    margin-left: 60px;
-    padding: 40px 20px;
-}
-
-.home-hero {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    animation: fadeIn 0.5s ease;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.home-title {
-    font-family: 'Cinzel', serif;
-    font-size: 3.5rem;
-    color: #2c3e50;
-}
-
-.home-subtitle {
-    font-style: italic;
-    color: #6d4c41;
-    margin-bottom: 20px;
-}
-
-.login-card {
-    background-color: rgba(255, 255, 255, 0.95);
-    padding: 40px 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    width: 100%;
-    max-width: 400px;
-}
-
-.form-input {
-    width: 100%;
-    padding: 12px;
-    border: 2px solid #a1887f;
-    border-radius: 6px;
-    margin-bottom: 15px;
-}
-
-.btn-submit {
-    width: 100%;
-    padding: 12px;
-    font-weight: bold;
-    color: white;
-    background-color: var(--primary-color);
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
-.footer {
-    margin-top: auto;
-    padding: 20px;
-    text-align: center;
-    background-color: rgba(93, 64, 55, 0.1);
-    border-top: 1px solid #d7ccc8;
-}
+<script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const username = document.getElementById('user').value;
+        const password = document.getElementById('pass').value;
+        if (username === 'admin' && password === 'password') {
+            window.location.href = 'history.html'; 
+        } else {
+            alert('Incorrect credentials. Try admin/password.');
+        }
+    });
+</script>
+</body>
+</html>
