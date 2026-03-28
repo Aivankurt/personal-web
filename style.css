@@ -1,16 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Cinzel:wght@700&family=Montserrat:wght@400;700&display=swap');
+
 :root {
     --primary-color: #5d4037;
     --secondary-color: #efebe9;
     --accent-color: #ffcc80;
     --highlight-color: #bf360c;
     --text-color: #3e2723;
-    --bg-overlay: rgba(244, 236, 207, 0.85);
+    --bg-overlay: rgba(244, 236, 207, 0.7);
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     color: var(--text-color);
     min-height: 100vh;
     display: flex;
@@ -20,36 +22,45 @@ body {
     background-size: cover;
 }
 
+/* TOP NAV */
 .nav { background-color: var(--primary-color); padding: 15px 0; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); position: sticky; top: 0; z-index: 1000; }
 .nav-list { list-style: none; display: flex; justify-content: center; gap: 40px; }
 .nav-link { text-decoration: none; color: var(--secondary-color); font-weight: bold; font-size: 1.1rem; transition: color 0.3s ease; }
 .nav-link:hover, .nav-link.active { color: var(--accent-color); }
 
+/* SIDE TAB MENU */
 .side-menu { position: fixed; left: 0; top: 50%; transform: translateY(-50%); background-color: rgba(93, 64, 55, 0.9); padding: 20px 10px; border-radius: 0 10px 10px 0; display: flex; flex-direction: column; gap: 20px; box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2); z-index: 999; }
 .side-link { writing-mode: vertical-rl; text-orientation: mixed; transform: rotate(180deg); color: var(--secondary-color); text-decoration: none; font-size: 0.9rem; font-weight: bold; padding: 10px 5px; transition: all 0.3s ease; border-left: 3px solid transparent; }
 .side-link:hover { color: var(--accent-color); border-left: 3px solid var(--accent-color); }
 
-main { flex: 1; margin-left: 60px; padding: 40px 20px; animation: fadeIn 0.5s ease; }
-@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+main { flex: 1; margin-left: 60px; padding: 40px 20px; }
 
-.home-hero { text-align: center; display: flex; flex-direction: column; align-items: center; }
-.home-title { font-family: 'Cinzel', serif; font-size: 3.5rem; color: #2c3e50; }
-.home-subtitle { font-style: italic; color: #6d4c41; margin-bottom: 20px; }
+/* HERO SECTION */
+.home-hero { text-align: center; display: flex; flex-direction: column; align-items: center; margin-top: 20px; }
+.home-title { font-family: 'Cinzel', serif; font-size: 4rem; color: #1a252f; text-transform: uppercase; letter-spacing: 2px; }
+.home-subtitle { font-family: 'Montserrat', sans-serif; font-size: 1.8rem; color: #34495e; margin-bottom: 30px; font-weight: 700; }
 
-.login-card { background-color: rgba(255, 255, 255, 0.95); padding: 40px 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); width: 100%; max-width: 400px; }
-.form-input { width: 100%; padding: 12px; border: 2px solid #a1887f; border-radius: 6px; margin-bottom: 15px; }
-.btn-submit { width: 100%; padding: 12px; font-weight: bold; color: white; background-color: var(--primary-color); border: none; border-radius: 6px; cursor: pointer; }
+/* LOGIN CARD */
+.login-card { background-color: rgba(255, 255, 255, 0.9); padding: 40px 30px; border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.1); width: 100%; max-width: 450px; border: 1px solid rgba(255,255,255,0.3); }
+.login-card h3 { font-family: 'Montserrat', sans-serif; font-size: 1.5rem; margin-bottom: 25px; color: var(--primary-color); }
+.form-input { width: 100%; padding: 15px; border: 2px solid #d7ccc8; border-radius: 8px; margin-bottom: 20px; font-size: 1rem; }
+.btn-submit { width: 100%; padding: 15px; font-weight: bold; color: white; background-color: var(--primary-color); border: none; border-radius: 8px; cursor: pointer; font-size: 1.1rem; transition: background 0.3s; }
+.btn-submit:hover { background-color: #3e2723; }
 
-.content-card { max-width: 900px; margin: 0 auto; background: rgba(255, 255, 255, 0.85); padding: 30px; border-radius: 15px; }
-.section-header { font-family: 'Bangers', cursive; font-size: 3rem; text-align: center; color: var(--highlight-color); text-shadow: 2px 2px 0px var(--accent-color); margin-bottom: 30px; }
+/* CONTENT CARDS (History & Tutorials) */
+.section-header { font-family: 'Bangers', cursive; font-size: 3.5rem; text-align: center; color: #d35400; text-shadow: 2px 2px 0px #f39c12; margin-bottom: 40px; text-transform: uppercase; }
+.master-card { display: flex; align-items: center; background: rgba(255, 255, 255, 0.95); padding: 30px; border-radius: 20px; margin-bottom: 30px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); gap: 30px; }
+.master-img { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 5px solid var(--primary-color); }
+.master-info { flex: 1; }
+.master-info h2 { font-family: 'Cinzel', serif; color: var(--primary-color); margin-bottom: 15px; font-size: 2rem; border-bottom: 2px dashed #d7ccc8; padding-bottom: 10px; }
+.master-info p { line-height: 1.6; color: #5d4037; font-size: 1.1rem; }
+.art-preview { width: 300px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
 
-.tutorial-link { text-decoration: none; color: inherit; display: block; margin-bottom: 30px; }
-.tutorial-row { display: flex; gap: 20px; align-items: center; background: #fff; padding: 15px; border-radius: 12px; transition: 0.3s; border: 2px solid transparent; }
-.tutorial-link:hover .tutorial-row { transform: scale(1.02); border-color: var(--accent-color); box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); }
+/* TUTORIAL ROWS */
+.tutorial-link { text-decoration: none; color: inherit; display: block; margin-bottom: 25px; }
+.tutorial-row { display: flex; gap: 25px; align-items: center; background: white; padding: 20px; border-radius: 15px; transition: 0.3s; }
+.tutorial-row:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.15); }
+.video-thumb { width: 280px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+.video-info h3 { color: #bf360c; font-size: 1.4rem; margin-bottom: 8px; }
 
-.video-container { position: relative; width: 240px; flex-shrink: 0; }
-.tutorial-thumb { width: 100%; border-radius: 8px; display: block; }
-.video-container::after { content: '▶'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(93, 64, 55, 0.8); color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 1.5rem; opacity: 0.9; }
-.tutorial-card-title { color: var(--highlight-color); margin-bottom: 5px; font-family: 'Montserrat', sans-serif; font-weight: bold; }
-
-.footer { margin-top: auto; padding: 20px; text-align: center; background-color: rgba(93, 64, 55, 0.1); border-top: 1px solid #d7ccc8; }
+.footer { margin-top: auto; padding: 30px; text-align: center; background: rgba(93, 64, 55, 0.05); }
