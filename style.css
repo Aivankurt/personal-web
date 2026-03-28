@@ -162,7 +162,7 @@ main {
     cursor: pointer;
 }
 
-/* --- Tutorials Page Specific Styles --- */
+/* --- Tutorials & History Page Shared Styles --- */
 .content-card {
     max-width: 900px;
     margin: 0 auto;
@@ -196,6 +196,7 @@ main {
     border-radius: 12px;
     transition: 0.3s;
     border: 2px solid transparent;
+    margin-bottom: 20px;
 }
 
 .tutorial-link:hover .tutorial-row {
@@ -236,5 +237,13 @@ main {
 
 .tutorial-card-title {
     color: var(--highlight-color);
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+
+/* --- History Specific Layout Adjustment --- */
+article.tutorial-row p {
+    line-height: 1.6;
+    color: var(--text-color);
 }
