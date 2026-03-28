@@ -1,85 +1,160 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aivan Kurt | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+:root {
+    --primary-color: #5d4037;
+    --secondary-color: #efebe9;
+    --accent-color: #ffcc80;
+    --highlight-color: #bf360c;
+    --text-color: #3e2723;
+    --bg-overlay: rgba(244, 236, 207, 0.85);
+}
 
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#story">My Story</a></li>
-                <li><a href="#tutorials">Tutorials</a></li>
-            </ul>
-        </nav>
-    </header>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-    <div class="main-layout">
-        <aside class="sidebar">
-            <div class="hobby-link" onclick="changeHobby('volleyball')">Hobby 1</div>
-            <div class="hobby-link" onclick="changeHobby('drawing')">Hobby 2</div>
-            <div class="hobby-link" onclick="changeHobby('research')">Hobby 3</div>
-        </aside>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(var(--bg-overlay), var(--bg-overlay)),
+        url('https://cdn.luxatic.com/wp-content/uploads/2019/02/Vincent-van-Gogh.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
 
-        <main id="home">
-            <div class="welcome-section">
-                <div class="profile-box">
-                    <img src="https://www.facebook.com/b95ae0fd-9ff2-4815-8f28-edd17dcbccf6" alt="Profile Picture" class="profile-pic" onerror="this.src='https://via.placeholder.com/500x300?text=Upload+me.jpg+to+GitHub'">
-                </div>
-                
-                <h1 class="greeting">What Sup Mga Ka Artis's!</h1>
-                
-                <div class="bio-container">
-                    <img src="https://www.facebook.com/1abb9638-5f0f-4e48-8092-c7a8c414e268" alt="Kurt" class="mini-profile" onerror="this.src='https://via.placeholder.com/100'">
-                    <div class="bio-text">
-                        <p>I'm <strong>Aivan Kurt S. Ordoñez</strong>, also known as <strong>Kurt</strong>. 
-                        I am a young animator, voyager, and multimedia artist, telling my story and teaching people 
-                        the journey of life. Achiever.</p>
-                    </div>
-                </div>
+.nav {
+    background-color: var(--primary-color);
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 
-                <div id="hobby-display" class="hobby-showcase">
-                    <h3>My Hobbies</h3>
-                    <div class="hobby-images">
-                        <img id="hobby-img" src="https://thumbs.dreamstime.com/b/volleyball-bursts-cloud-colorful-powder-creating-vivid-display-action-captures-excitement-energy-354725121.jpg" alt="Hobby">
-                        <p id="hobby-caption">Volleyball: Excitement and Energy!</p>
-                    </div>
-                </div>
+.nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
 
-                <div class="java-window">
-                    <p>// Java Snippet: Profile Logic</p>
-                    <code>System.out.println("Role: Multimedia Artist & Researcher");</code>
-                </div>
-            </div>
-        </main>
-    </div>
+.nav-link {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
 
-    <footer>
-        <p>&copy; 2026 Aivan Kurt | Senior High School ICT Portfolio</p>
-    </footer>
+.nav-link:hover,
+.nav-link.active {
+    color: var(--accent-color);
+}
 
-    <script>
-        function changeHobby(type) {
-            const img = document.getElementById('hobby-img');
-            const caption = document.getElementById('hobby-caption');
+.side-menu {
+    position: fixed;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(93, 64, 55, 0.9);
+    padding: 20px 10px;
+    border-radius: 0 10px 10px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+}
 
-            if(type === 'volleyball') {
-                img.src = "https://thumbs.dreamstime.com/b/volleyball-bursts-cloud-colorful-powder-creating-vivid-display-action-captures-excitement-energy-354725121.jpg";
-                caption.innerText = "Hobby 1: Volleyball - Action and Energy";
-            } else if(type === 'drawing') {
-                img.src = "https://www.shutterstock.com/image-vector/cute-capybara-different-poses-cartoon-260nw-2528451193.jpg";
-                caption.innerText = "Hobby 2: Drawing - Creative Expressions";
-            } else if(type === 'research') {
-                img.src = "https://via.placeholder.com/300x200?text=Research+Activity";
-                caption.innerText = "Hobby 3: Qualitative Research & Smartwatch Study";
-            }
-        }
+.side-link {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding: 10px 5px;
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+}
 
-        console.log("Portfolio Loaded Successfully");
-    </script>
-</body>
-</html>
+.side-link:hover {
+    color: var(--accent-color);
+    border-left: 3px solid var(--accent-color);
+}
+
+main {
+    flex: 1;
+    margin-left: 60px;
+    padding: 40px 20px;
+}
+
+.home-hero {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.home-title {
+    font-family: 'Cinzel', serif;
+    font-size: 3.5rem;
+    color: #2c3e50;
+}
+
+.home-subtitle {
+    font-style: italic;
+    color: #6d4c41;
+    margin-bottom: 20px;
+}
+
+.login-card {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #a1887f;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 12px;
+    font-weight: bold;
+    color: white;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.footer {
+    margin-top: auto;
+    padding: 20px;
+    text-align: center;
+    background-color: rgba(93, 64, 55, 0.1);
+    border-top: 1px solid #d7ccc8;
+}
